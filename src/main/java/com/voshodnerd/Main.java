@@ -36,6 +36,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.ui.Model;
 
 @Controller
@@ -71,8 +73,8 @@ public class Main {
 
     @RequestMapping("/test")
     String test(Model model) {
-        List<JOutSchet> ls = datazRepository.findAll();
-        model.addAttribute("joutshet", ls);
+        Page<JOutSchet> ls = datazRepository.findAll(new PageRequest(1, 20));
+        model.addAttribute("joutshet", ls.getContent());
         return "test";
     }
 

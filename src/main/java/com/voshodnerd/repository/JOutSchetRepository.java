@@ -6,6 +6,8 @@
 package com.voshodnerd.repository;
 
 import com.voshodnerd.entity.JOutSchet;
+import java.util.Date;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
@@ -14,5 +16,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author Талалаев
  */
 public interface JOutSchetRepository extends  JpaRepository<JOutSchet, Long> {
-    
+   List<JOutSchet> findByDataBetween(Date start, Date end);
 }

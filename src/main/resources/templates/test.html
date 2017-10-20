@@ -7,16 +7,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-       
+
 
         <div class="container">
             <h1>Database Output</h1>
-            <ul th:each="record : ${joutshet}">
-                <li th:text="${record.id}"/>
-                 <li th:text="${record.nshet}"/>
-                  <li th:text="${record.pyear}"/>
-                   <li th:text="${record.pyear}"/>
-            </ul>
+            <table class="table table-bordered"> 
+            <tr th:each="record : ${joutshet}">
+                <td th:text="${record.id}"/>
+                <td th:text="${record.nschet}"/>
+                <td th:text="${record.pYear}"/>
+                <td th:text="${record.pYear}"/>
+                <td th:text="${record.pMonth}"/>
+            </tr>
+            </table>     
         </div>
 
 
